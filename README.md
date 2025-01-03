@@ -97,42 +97,43 @@ Puedes borrar el contenido de estos archivos llamando al método `clearLogFiles(
 El proyecto incluye validaciones automáticas mediante decoradores para asegurarse de que los datos ingresados sean correctos, como el formato del correo electrónico, que el ISBN no esté vacío y que las fechas de nacimiento sean válidas.
 
 ## Estructura del proyecto
-
-app/
-│
-├── dist/                # Directorio generado tras compilar el código TypeScript
-│
-├── node_modules/        # Dependencias instaladas por npm
-│
-├── src/                 # Código fuente del proyecto
-│   ├── decorators/      # Decoradores personalizados
-│   │   ├── logErrorToFile.ts # Decorador de log de traza
-│   │   ├── logTraceToFile.ts # Decorador de logs de errores
-│   │   └── validate.ts # Decorador de validación
+```
+.
+└── app/
 │   │
-│   ├── models/          # Modelos de datos (clases como Book, User, etc.)
-│   │   ├── Book.ts     # Modelo de libro
-│   │   ├── Library.ts     # Modelo de librería
-│   │   ├── User.ts     # Modelo de usuario
-│   │   └── Loan.ts   # Modelo de préstamo
+│   ├── dist/                # Directorio generado tras compilar el código TypeScript
 │   │
-│   ├── utils/           # Utilidades auxiliares (como ValidationUtils)
-│   │   ├── ValidationUtils.ts  # Funciones de validación
-│   │   └── ...         # Otras utilidades
+│   ├── node_modules/        # Dependencias instaladas por npm
 │   │
-│   ├── interfaces/           # Interfaces para gestionar los accesos a Books, Users y Loans
-│   │   ├── BookActions.ts  # Métodos para gestionar libros
-│   │   ├── UserActions.ts  # Métodos para gestionar usuarios
-│   │   └── LoanActions.ts  # Métodos para gestionar préstamos
-│   │
-│   ├── utils/           # Interfaces para gestionar los accesos a Books, Users y Loans
-│   │   ├── LogUtils.ts  # Funciones auxiliares para escribir en los txt o limpiarlos
-│   │   └── ValidationUtils.ts  # Funciones auxiliares para validar la entrada de datos
-│   │
-│   └── index.ts         # Punto de entrada principal de la aplicación
+│   └── src/                 # Código fuente del proyecto
+│       ├── decorators/      # Decoradores personalizados
+│       │   ├── logErrorToFile.ts # Decorador de log de traza
+│       │   ├── logTraceToFile.ts # Decorador de logs de errores
+│       │   └── validate.ts # Decorador de validación
+│       │
+│       ├── models/          # Modelos de datos (clases como Book, User, etc.)
+│       │   ├── Book.ts     # Modelo de libro
+│       │   ├── Library.ts     # Modelo de librería
+│       │   ├── User.ts     # Modelo de usuario
+│       │   └── Loan.ts   # Modelo de préstamo
+│       │
+│       ├── utils/           # Utilidades auxiliares (como ValidationUtils)
+│       │   ├── ValidationUtils.ts  # Funciones de validación
+│       │   └── ...         # Otras utilidades
+│       │
+│       ├── interfaces/           # Interfaces para gestionar los accesos a Books, Users y Loans
+│       │   ├── BookActions.ts  # Métodos para gestionar libros
+│       │   ├── UserActions.ts  # Métodos para gestionar usuarios
+│       │   └── LoanActions.ts  # Métodos para gestionar préstamos
+│       │
+│       ├── utils/           # Interfaces para gestionar los accesos a Books, Users y Loans
+│       │   ├── LogUtils.ts  # Funciones auxiliares para escribir en los txt o limpiarlos
+│       │   └── ValidationUtils.ts  # Funciones auxiliares para validar la entrada de datos
+│       │
+│       └── index.ts         # Punto de entrada principal de la aplicación
 │
 ├── package.json         # Archivo de configuración de npm
 ├── package-lock.json    # Archivo de bloqueo de dependencias
 ├── tsconfig.json        # Configuración de TypeScript
 └── README.md            # Documentación de github del proyecto
-
+```
