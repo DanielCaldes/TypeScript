@@ -105,29 +105,25 @@ El proyecto incluye validaciones automáticas mediante decoradores para asegurar
 │   │
 │   ├── node_modules/        # Dependencias instaladas por npm
 │   │
-│   └── src/                 # Código fuente del proyecto
-│       ├── decorators/      # Decoradores personalizados
-│       │   ├── logErrorToFile.ts # Decorador de log de traza
-│       │   ├── logTraceToFile.ts # Decorador de logs de errores
-│       │   └── validate.ts # Decorador de validación
-│       │
-│       ├── models/          # Modelos de datos (clases como Book, User, etc.)
-│       │   ├── Book.ts     # Modelo de libro
-│       │   ├── Library.ts     # Modelo de librería
-│       │   ├── User.ts     # Modelo de usuario
-│       │   └── Loan.ts   # Modelo de préstamo
-│       │
-│       ├── utils/           # Utilidades auxiliares (como ValidationUtils)
-│       │   ├── ValidationUtils.ts  # Funciones de validación
-│       │   └── ...         # Otras utilidades
+│   └── src/                         # Código fuente del proyecto
+│       ├── decorators/              # Decoradores personalizados
+│       │   ├── logErrorToFile.ts    # Decorador de log de traza
+│       │   ├── logTraceToFile.ts    # Decorador de logs de errores
+│       │   └── validate.ts          # Decorador de validación
 │       │
 │       ├── interfaces/           # Interfaces para gestionar los accesos a Books, Users y Loans
 │       │   ├── BookActions.ts  # Métodos para gestionar libros
 │       │   ├── UserActions.ts  # Métodos para gestionar usuarios
 │       │   └── LoanActions.ts  # Métodos para gestionar préstamos
 │       │
-│       ├── utils/           # Interfaces para gestionar los accesos a Books, Users y Loans
-│       │   ├── LogUtils.ts  # Funciones auxiliares para escribir en los txt o limpiarlos
+│       ├── models/            # Modelos de datos (clases como Book, User, etc.)
+│       │   ├── Book.ts        # Modelo de libro
+│       │   ├── Library.ts     # Modelo de librería
+│       │   ├── User.ts        # Modelo de usuario
+│       │   └── Loan.ts        # Modelo de préstamo
+│       │
+│       ├── utils/                  # Interfaces para gestionar los accesos a Books, Users y Loans
+│       │   ├── LogUtils.ts         # Funciones auxiliares para escribir en los txt o limpiarlos
 │       │   └── ValidationUtils.ts  # Funciones auxiliares para validar la entrada de datos
 │       │
 │       └── index.ts         # Punto de entrada principal de la aplicación
