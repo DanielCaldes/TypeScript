@@ -60,20 +60,26 @@ Este proyecto implementa una aplicación de gestión de biblioteca que permite g
 Puedes interactuar con la librería creando instancias de `Library` para gestionar libros y usuarios. Ejemplo de uso:
 
 ```typescript
+// Crear una instancia de la librería
 const library = new Library();
+
+// Diferentes vistas para gestionar áreas específicas
+const bookManager: BookActions = library;  // Vista para gestionar libros
+const userManager: UserActions = library;  // Vista para gestionar usuarios
+const loanManager: LoanActions = library;  // Vista para gestionar préstamos
 
 // Crear un libro
 const book = new Book('978-3-16-148410-0', 'El Gran Libro', 'Autor Desconocido', 2022, 'Ficción', 5);
-library.addBook(book);
+bookManager.addBook(book); // Usamos la vista de libros para añadir un libro
 
 // Registrar un usuario
 const user = new User('Juan Pérez', 'juan@example.com', new Date('1990-05-15'));
-library.registerUser(user);
+userManager.registerUser(user); // Usamos la vista de usuarios para registrar un usuario
 
 // Prestar un libro
 const borrowDate = new Date('2025-01-10');
 const returnDate = new Date('2025-02-10');
-library.loanBook(user.email, book.isbn, borrowDate, returnDate);
+loanManager.loanBook(user.email, book.isbn, borrowDate, returnDate); // Usamos la vista de préstamos para prestar un libro
 
 // Ver el listado de libros y usuarios
 console.log(library.booksList);
