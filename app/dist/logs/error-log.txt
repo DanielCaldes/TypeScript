@@ -1,0 +1,10 @@
+[2025-01-03T17:57:35.506Z] Error en método addBook: [AddBook] El libro (Harry Potter y las Reliquias de la Muerte:978-0-545-01022-1) ya existe en la librería.
+[2025-01-03T17:57:35.507Z] Error en método updateBook: [UpdateBook] El libro con isbn (978-0-7432-7356-5) no existe en la librería. Revisa el isbn
+[2025-01-03T17:57:35.507Z] Error en método removeBook: [RemoveBook] El libro con isbn (978-1-85326-000-1) no existe en la librería. Revisa el isbn
+[2025-01-03T17:57:35.509Z] Error en método registerUser: [RegisterUser] Este email (juancar@example.com) ya está registrado para otro usuario
+[2025-01-03T17:57:35.509Z] Error en método updateUser: [UpdateUser] Este email (carlosg@example.com) no está registrado
+[2025-01-03T17:57:35.510Z] Error en método deleteUser: [DeleteUser] Este email (maría.p@example.com) no está registrado
+[2025-01-03T17:57:35.511Z] Error en método loanBook: [LoanBook] Este email (juancar@example.com) no está registrado
+[2025-01-03T17:57:35.511Z] Error en método loanBook: [LoanBook] Este libro (978-0-261-10236-9) no está en la librería
+[2025-01-03T17:57:35.529Z] Error en método returnBook: [ReturnBook] Este email (juancar@example.com) no está registrado
+[2025-01-03T17:57:35.529Z] Error en método returnBook: [ReturnBook] Este libro (978-0-7432-7356-5) no está en la librería

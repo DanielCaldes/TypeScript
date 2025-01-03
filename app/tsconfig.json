@@ -1,0 +1,38 @@
+{
+  "compilerOptions": {
+    // La versión de JavaScript a la que se compilará el código TypeScript
+    "target": "es6", 
+    
+    // El sistema de módulos que se utilizará (por ejemplo, CommonJS para Node.js)
+    "module": "commonjs",
+    
+    // Directorio de salida para los archivos JavaScript generados
+    "outDir": "./dist", 
+    
+    // Directorio de origen de los archivos TypeScript
+    "rootDir": "./src",
+    
+    // Activar comprobaciones estrictas de tipos para mejorar la seguridad y consistencia
+    "strict": true, 
+    
+    // Habilitar interoperabilidad con módulos ES para permitir importaciones y exportaciones modernas
+    "esModuleInterop": true, 
+    
+    // Ignorar la comprobación de tipos en los archivos de las bibliotecas para acelerar la compilación
+    "skipLibCheck": true,
+    
+    // Asegurarse de que el uso de mayúsculas y minúsculas sea consistente en los nombres de archivos
+    "forceConsistentCasingInFileNames": true,
+    
+    // Habilitar el uso de decoradores experimentales en TypeScript
+    "experimentalDecorators": true,
+    
+    // Emitir metadatos adicionales necesarios para algunos decoradores
+    "emitDecoratorMetadata": true
+  },
+  // Incluir todos los archivos TypeScript dentro de la carpeta `src`
+  "include": ["src/**/*.ts"], 
+  
+  // Excluir la carpeta `node_modules` para evitar incluir dependencias externas
+  "exclude": ["node_modules"]
+}
