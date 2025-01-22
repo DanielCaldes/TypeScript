@@ -4,6 +4,7 @@ const Book_1 = require("./models/Book");
 const User_1 = require("./models/User");
 const Library_1 = require("./models/Library");
 const LogUtils_1 = require("./utils/LogUtils");
+//Para compilar a javascript -> tsc
 const library = new Library_1.Library(); //Instancia principal de la clase
 //Diferentes vistas para gestionar áreas específicas
 const bookManager = library;

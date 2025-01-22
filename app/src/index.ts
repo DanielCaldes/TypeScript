@@ -8,6 +8,8 @@ import { LoanActions } from './interfaces/LoanActions';
 
 import { LogUtils } from './utils/LogUtils';
 
+//Para compilar a javascript -> tsc
+
 const library = new Library(); //Instancia principal de la clase
 
 //Diferentes vistas para gestionar áreas específicas
