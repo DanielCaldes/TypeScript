@@ -96,6 +96,45 @@ Puedes borrar el contenido de estos archivos llamando al método `clearLogFiles(
 
 El proyecto incluye validaciones automáticas mediante decoradores para asegurarse de que los datos ingresados sean correctos, como el formato del correo electrónico, que el ISBN no esté vacío y que las fechas de nacimiento sean válidas.
 
+## Diagrama de Clases
+
+A continuación, se presenta el diagrama UML que ilustra las relaciones entre las clases principales del sistema:
+
+![Diagrama de clases UML](assets/class-driagram-UML.png)
+
+## Decisiones de diseño
+
+El flujo principal del proyecto se encuentra en el archivo index.ts, que actúa como punto de entrada de la aplicación. Este diseño sigue los principios de la programación orientada a objetos (POO) y organiza las funcionalidades en diferentes clases, interfaces y decoradores.
+
+### Clases
+Las clases principales están definidas en la carpeta models e incluyen:
+- ```Book```: Representa un libro y sus atributos.
+- ```User```: Modela a los usuarios del sistema.
+- ```Library```: Implementa la lógica central de la aplicación, gestionando libros, usuarios y préstamos.
+- ```Loan```: Representa los préstamos realizados en la biblioteca.
+
+Para promover la encapsulación, se utiliza get y set para controlar el acceso a los atributos, asegurando la consistencia y seguridad de los datos.
+
+### Interfaces
+Para estructurar y controlar el acceso a los métodos de la clase ```Library```, se han definido las siguientes interfaces:
+- ```BookActions```: Permite realizar operaciones relacionadas con los libros.
+- ```LoanActions```: Gestiona las acciones sobre préstamos.
+- ```UserActions```: Proporciona funcionalidad para la gestión de usuarios.
+
+Estas interfaces permiten especificar los métodos que debe implementar la librería, definiendo una estructura común y garantizando consistencia en su implementación. Además, facilitan el polimorfismo, ya que diferentes clases pueden implementar estas interfaces. Por ejemplo, si se requiriera cambiar la gestión de usuarios a una clase específica, la interfaz aseguraría que la estructura de métodos se mantuviera consistente. Esto también mejora la legibilidad y organización del código, haciendo que sea más fácil de mantener y extender.
+
+### Decoradores
+Los decoradores se han implementado para añadir funcionalidades transversales sin modificar directamente el código de las clases o métodos:
+- ```ErrorLog```: Captura y registra errores en un archivo de log, mejorando la depuración.
+- ```Log```: Realiza un seguimiento de las llamadas a los métodos, registrando datos relevantes para auditoría o análisis.
+- ```Validation```: Verifica la entrada de datos, garantizando que cumplan con las reglas del sistema.
+
+### Utilidades
+Para mantener los decoradores simples y modulares, las funciones auxiliares necesarias están definidas en la carpeta ```utils```:
+- ```LogsUtils```: Centraliza el acceso y gestión de los registros de logs.
+- ```ValidationUtils```: Agrupa las validaciones reutilizables para verificar las entradas de datos.
+
+
 ## Estructura del proyecto
 ```
 .
@@ -105,31 +144,34 @@ El proyecto incluye validaciones automáticas mediante decoradores para asegurar
 │   │
 │   ├── node_modules/        # Dependencias instaladas por npm
 │   │
-│   └── src/                         # Código fuente del proyecto
-│       ├── decorators/              # Decoradores personalizados
-│       │   ├── logErrorToFile.ts    # Decorador de log de traza
-│       │   ├── logTraceToFile.ts    # Decorador de logs de errores
-│       │   └── validate.ts          # Decorador de validación
-│       │
-│       ├── interfaces/           # Interfaces para gestionar los accesos a Books, Users y Loans
-│       │   ├── BookActions.ts  # Métodos para gestionar libros
-│       │   ├── UserActions.ts  # Métodos para gestionar usuarios
-│       │   └── LoanActions.ts  # Métodos para gestionar préstamos
-│       │
-│       ├── models/            # Modelos de datos (clases como Book, User, etc.)
-│       │   ├── Book.ts        # Modelo de libro
-│       │   ├── Library.ts     # Modelo de librería
-│       │   ├── User.ts        # Modelo de usuario
-│       │   └── Loan.ts        # Modelo de préstamo
-│       │
-│       ├── utils/                  # Interfaces para gestionar los accesos a Books, Users y Loans
-│       │   ├── LogUtils.ts         # Funciones auxiliares para escribir en los txt o limpiarlos
-│       │   └── ValidationUtils.ts  # Funciones auxiliares para validar la entrada de datos
-│       │
-│       └── index.ts         # Punto de entrada principal de la aplicación
+│   ├── src/                         # Código fuente del proyecto
+│   │   ├── decorators/              # Decoradores personalizados
+│   │   │   ├── logErrorToFile.ts    # Decorador de log de traza
+│   │   │   ├── logTraceToFile.ts    # Decorador de logs de errores
+│   │   │   └── validate.ts          # Decorador de validación
+│   │   │
+│   │   ├── interfaces/           # Interfaces para gestionar los accesos a Books, Users y Loans
+│   │   │   ├── BookActions.ts  # Métodos para gestionar libros
+│   │   │   ├── UserActions.ts  # Métodos para gestionar usuarios
+│   │   │   └── LoanActions.ts  # Métodos para gestionar préstamos
+│   │   │
+│   │   ├── models/            # Modelos de datos (clases como Book, User, etc.)
+│   │   │   ├── Book.ts        # Modelo de libro
+│   │   │   ├── Library.ts     # Modelo de librería
+│   │   │   ├── User.ts        # Modelo de usuario
+│   │   │   └── Loan.ts        # Modelo de préstamo
+│   │   │
+│   │   ├── utils/                  # Interfaces para gestionar los accesos a Books, Users y Loans
+│   │   │   ├── LogUtils.ts         # Funciones auxiliares para escribir en los txt o limpiarlos
+│   │   │   └── ValidationUtils.ts  # Funciones auxiliares para validar la entrada de datos
+│   │   │
+│   │   └── index.ts         # Punto de entrada principal de la aplicación
+│   │ 
+│   ├── package.json         # Archivo de configuración de npm
+│   │
+│   ├── package-lock.json    # Archivo de bloqueo de dependencias
+│   │
+│   └── tsconfig.json        # Configuración de TypeScript
 │
-├── package.json         # Archivo de configuración de npm
-├── package-lock.json    # Archivo de bloqueo de dependencias
-├── tsconfig.json        # Configuración de TypeScript
 └── README.md            # Documentación de github del proyecto
 ```
